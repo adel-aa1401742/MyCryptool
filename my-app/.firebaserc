@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "myCryptool": "mycryptool",
+    "default": "mycryptool"
+  }
+}

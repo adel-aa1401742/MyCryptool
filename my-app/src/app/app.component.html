@@ -1,0 +1,82 @@
+
+  <div class="row1">
+
+    <mat-form-field class="block">
+      <textarea value="" class="textArea" matInput placeholder="Plaintext/Cryptanalyzed ciphertext" [(ngModel)]="leftText"></textarea>
+    </mat-form-field>
+    <div class="column">
+      <label class="key" *ngIf="encryptionKey" (click)="getRandomKey()">Key : {{encryptionKey}}</label>
+      <button class="btn" mat-raised-button color="primary" (click)="encrypt()">Encrypt</button>
+      <button class="btn" mat-raised-button color="accent" (click)="decrypt()">Cryptanalyze</button>
+      <div class="row2">
+
+
+        <mat-form-field class="block2">
+          <input disabled={{cantSwap}} maxlength="1"   style="text-transform:uppercase"   matInput placeholder="Replace" value="A" [(ngModel)]="letterA">
+        </mat-form-field >
+
+        <mat-form-field class="block2">
+          <input disabled={{cantSwap}} maxlength="1"  style="text-transform:lowercase"   matInput placeholder="By" value="z" [(ngModel)]="letterB">
+        </mat-form-field >
+
+
+      </div>
+
+      <button disabled={{cantSwap}} class="btn" mat-raised-button color="primary" (click)="swap()">Swap</button>
+      <button class="btn" mat-raised-button color="accent" (click)="clearAll()">Clear All</button>
+
+    </div>
+
+    <mat-form-field class="block">
+      <textarea value="" class="textArea" matInput placeholder="Ciphertext" [(ngModel)]="rightText"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="showChart">
+    <table class="table-bordered">
+      <tr >
+        <th >Ciphertext letters by frequency</th>
+        <th class="cell" *ngFor="let a of tableRow1">{{a.label}}</th>
+      </tr>
+      <tr >
+        <th >Manually substituted letters </th>
+        <th  class={{s.class}} *ngFor="let s of substitutions"
+        (click)="undoSwap(s)">{{s.letter}}</th>
+      </tr>
+      <tr >
+        <th >Alphabet letters by frequency</th>
+        <th class="cell"  *ngFor="let b of tableRow2">{{b}}</th>
+      </tr>
+    </table>
+    </div>
+    <div *ngIf="showChart">
+
+    <br>
+    <fusioncharts
+      [chartConfig]=chartConfig
+      [dataSource]=dataSource >
+    </fusioncharts>
+    </div>
+
+    <mat-card  class="result">
+      <mat-card-content>
+        <section class="example-section">
+            <div *ngIf="showChart" class="toggle">
+          <mat-slide-toggle 
+            class="example-margin"
+            [color]="color"
+            [checked]="checked"
+            [disabled]="disabled"
+            [(ngModel)]="orderByFreq" id="orderByFreq" (change)="orderByFrequency()"
+          >
+            Toggle between Frequency/Alphabetic order
+          </mat-slide-toggle>
+          </div>
+          <p class="info" style="font-size: 18px">Adel Azzouza / Al-Kindi Research Center / Qatar University / December 2018</p>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  
+
+
+

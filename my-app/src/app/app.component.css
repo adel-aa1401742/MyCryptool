@@ -1,0 +1,93 @@
+
+.row1 {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+
+
+}
+.row2 {
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+  margin-left: 20px;
+
+
+}
+.block {
+  width: 100%;
+  font-size: 20px;
+
+}
+.block2 {
+  margin: 5px;
+  width: 30%;
+}
+.textArea{
+  height: 220px;
+
+}
+.key{
+  cursor: url('https://i.imgur.com/wmnY5bo.png'),auto;;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.column {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+}
+.btn{
+  margin: 2px;
+
+}
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+
+
+.cell{
+  text-align: center;
+  width: 28px;
+  height: 28px;
+}
+.table-bordered{
+  margin: auto;
+}
+.removableCell{
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  cursor:  url('https://i.imgur.com/lVipfeH.png'), auto;;
+  
+}
+.info{
+  padding-right: 5px;
+  position: absolute;
+  bottom: -5;
+  right: 0;
+}
+.toggle{
+  position: absolute;
+  left: 0;
+}
+.result{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
